@@ -1,25 +1,59 @@
 <template>
     <center>
         <div>
-            <h3> Welcome to the Shop </h3>
+            <h1 class="title">All Products</h1>
+                <!-- <p>{{length}} products</p> -->
+                <table class="table is-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="product in products"  v-bind:key="product.id">
+                            <td>{{product.name}}</td>
+                            <td>{{product.description}}</td>
+                            <td>${{product.price}}</td>
+                            <td><button @click='addToCart(product)' class='button is-info'>Add to cart</button></td>
+                        </tr>
+                    </tbody>
+                </table>
         </div>
-        <div>
-            <h3> buy some quotes or whatever </h3>
-            <ol>
-                <li> We can stay up late, swapping manly stories, and in the morning, I'm making waffles! </li>
-                <v-btn flat color="primary">buy</v-btn>
-            </ol>
-        </div>
+       
     </center>
 </template>
 
 <script>
+    
+    const db = firebase.firestore();
+    // import { mapGetters, mapActions } from 'vuex'
     export default {
         name: 'shop',
-        data: {
-        }
+        // computed: mapGetters({
+        //     products: 'allProducts',
+        //     length: 'getNumberOfProducts'
+        // },
+        data: () => ({ products : []}),
+        firestore: {
+            products: db.collection('products')
+            
+        },
+        methods: {
+            addToCart () {
+                alert ('added')
+            }
+    },
+    
+        
     }
+
+    
+    // console.log("string", db.collection('products'))
 </script>
+
 
 <style>
 

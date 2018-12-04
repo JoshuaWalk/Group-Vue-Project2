@@ -6,6 +6,33 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>vue-mess</title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
+        <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-functions.js"></script>
+    
+    <script>
+    const config = {
+      apiKey: "AIzaSyA_K3NMjqnAAEsVtnRHmeNq_BwXMb4nM34",
+      authDomain: "secretproject007-b7c53.firebaseapp.com",
+      databaseURL: "https://secretproject007-b7c53.firebaseio.com",
+      projectId: "secretproject007-b7c53",
+      storageBucket: "secretproject007-b7c53.appspot.com",
+      messagingSenderId: "131504465056"
+    };
+    firebase.initializeApp(config);
+    const firestore = firebase.firestore()
+    firestore.settings({
+      timestampsInSnapshots: true
+    });
+     
+    </script>  
+
   </head>
   <body>
     <noscript>

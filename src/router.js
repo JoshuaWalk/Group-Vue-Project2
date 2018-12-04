@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Authentication from '@/components/Authentication'
 import Shop from '@/components/Shop'
+import Cart from '@/components/Cart'
 import Raj from '@/components/Raj'
 Vue.use(Router)
 
@@ -39,6 +40,10 @@ export default new Router({
       path: '/raj',
       name: 'raj',
       component: Raj
+    },
+    {path: '/cart',
+     name: 'cart',
+     component: Cart
     }
   ]
 })
