@@ -7,7 +7,7 @@
             <h3> buy some quotes or whatever </h3>
             <ol>
                 <li> We can stay up late, swapping manly stories, and in the morning, I'm making waffles! </li>
-                <v-btn>buy</v-btn>
+                <v-btn flat color="primary">buy</v-btn>
             </ol>
         </div>
     </center>
