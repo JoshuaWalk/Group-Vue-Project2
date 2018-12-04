@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-
+import Authentication from '@/components/Authentication'
+import Shop from '@/components/Shop'
 Vue.use(Router)
 
 export default new Router({
@@ -22,6 +23,16 @@ export default new Router({
       component: function () { 
         return import(/* webpackChunkName: "about" */ './views/About.vue')
       }
+    },
+    {
+      path: '/authentication',
+      name: 'authentication',
+      component: Authentication
+    },
+    {
+      path: '/shop',
+      name: 'shop',
+      component: Shop
     }
   ]
 })
