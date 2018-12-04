@@ -14,10 +14,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="p in products">
-            <td>{{ p.name }}</td>
-            <td>${{ p.price }}</td>
-            <td>{{ p.quantity }}</td>
+        <tr v-for="product in products">
+            <td>{{ product.name }}</td>
+            <td>${{ product.price }}</td>
+            <td>{{ product.quantity }}</td>
           </tr>
           <tr>
             <td><b>Total:</b></td>

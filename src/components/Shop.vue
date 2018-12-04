@@ -13,7 +13,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="product in products" track-by="id">
+                            <tr v-for="product in products" track-by="id" v-bind:key="product.id">
                                 <td>{{product.name}}</td>
                                 <td>{{product.description}}</td>
                                 <td>${{product.price}}</td>
@@ -22,21 +22,12 @@
                         </tbody>
                     </table>
         </div>
-        <!-- <div>
-            <h3> Welcome to the Shop </h3>
-        </div>
-        <div>
-            <h3> buy some quotes or whatever </h3>
-            <ol>
-                <ul> "We can stay up late, swapping manly stories, and in the morning, I'm making waffles!" - Donkey <v-btn flat color="primary">buy</v-btn></ul>
-                <ul> "My music isn’t just music — it’s medicine." - Kanye West <v-btn flat color="warning">buy</v-btn></ul>
-                <ul> "I don't like telephones." - Marc Bolan <v-btn flat color="primary">buy</v-btn></ul>
-            </ol>
-        </div> -->
+       
     </center>
 </template>
 
 <script>
+    const db = firebase.firestore();
     import { mapGetters, mapActions } from 'vuex'
     export default {
         name: 'shop',
@@ -44,10 +35,16 @@
             products: 'allProducts',
             length: 'getNumberOfProducts'
         }),
+        firestore: {
+            products: db.collection("products")
+        },
         methods: mapActions([
             'addToCart'
-        ])
+        ]),
+        
+        
 }
+
     
     
 </script>
