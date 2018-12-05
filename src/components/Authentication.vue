@@ -1,31 +1,58 @@
 <template>
-  <div id="login">
-    <h3>login</h3>
-    <v-btn flat href="/login" target="login here">
-     login
-    </v-btn>
-    <div component="dashboard">
-        <ul>
-      <li v-for="user in users" v-bind:key="user.id">
-        id: {{user.id}}
-     
-      </li>
-    </ul>
+<form id="signUp">
+
+    <div>
+    <h3>login</h3><br>
+
+    <input name='name' type='text' placeholder='name' v-model='name'>
+    
     </div>
-  </div>
+    
+    <br>
+    
+    <div>
+    <input name='email' type='text' placeholder='email' v-model='email'>
+    
+    </div>
+    
+    <br>
+    
+    <div>
+    <button v-@click= 'addUser' name='submit' type='button'>SUBMIT</button>
+    
+    </div>
+
+</form>
 </template>
 
 
 <script>
-const db = firebase.firestore();
-console.log(db);
+
+// let database = app.firebase();
+// let dbUser = database.ref('users');
+
 export default {
-  name: "login",
-  data: () => ({ users: []
-   }),
-  firestore: {
-    users: db.collection("users"),
-    
-  }
-};
+    name: 'Authentication',
+
+    data:() => {
+        return {
+            users: {
+                name: '',
+                email: '',
+            }
+        }
+    },
+
+    methods: {
+        addUser: function(){
+        dbUser.push(this.newUser);
+        this.newUser.name = '{{name}}',
+        this.newUser.email = '{{email}}'
+        
+        
+    }
+    }
+}
 </script>
+
+<style></style>
