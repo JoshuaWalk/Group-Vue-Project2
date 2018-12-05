@@ -6,17 +6,17 @@
       <router-link to="/cart">Cart</router-link> |
       <router-link to="/raj">Raj's Page</router-link>
     </div>
-    <nav-bar></nav-bar>
+    
     <router-view/>
   </div>
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue'
+
 export default {
   name: 'app',
   components: {
-    NavBar
+    
   },
   data () {
     return {}

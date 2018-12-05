@@ -1,6 +1,7 @@
 <template>
     <center>
         <div>
+            <nav-bar></nav-bar>
             <h1 class="title">All Products</h1>
                 <!-- <p>{{length}} products</p> -->
                 <table class="table is-striped">
@@ -27,21 +28,25 @@
 </template>
 
 <script>
-    
+    import NavBar from '@/components/NavBar.vue'
     const db = firebase.firestore();
     export default {
         name: 'shop',
+        components: {
+            NavBar
+        },
         data: () => ({ products : []}),
         firestore: {
             products: db.collection('products')
             
         },
         methods: {
-            addToCart () {
-                alert ('added')
+            addToCart  () {
+                 alert ('added')
             }
     },            
 }
+
 </script>
 
 

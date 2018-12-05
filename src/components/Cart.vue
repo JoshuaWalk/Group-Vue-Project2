@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="product in products">
+        <tr v-for="product in products" v-bind:key="product.id">
             <td>{{ product.name }}</td>
             <td>${{ product.price }}</td>
             <td>{{ product.quantity }}</td>
@@ -30,22 +30,12 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
-export default {
-  computed: {
-    ...mapGetters({
-      products: 'cartProducts'
-    }),
-    total () {
-      return this.products.reduce((total, p) => {
-        return total + p.price * p.quantity
-      }, 0)
-    }
-  },
-  methods: {
-    checkout(){
-      alert('Pay us $' + this.total)
-    }
-  }
-}
+  // export default {
+  //   name: 'shop',
+  //       data: () => ({ inCart : []}),
+  //       firestore: {
+  //           products: db.products('inCart')
+            
+  //       },
+  // }
 </script>
