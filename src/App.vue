@@ -5,6 +5,7 @@
       <router-link to="/shop">Josh's Page</router-link> &
       <router-link to="/cart">Cart</router-link> |
       <router-link to="/raj">Raj's Page</router-link>
+      <searchbar/>
     </div>
     
     <router-view/>
@@ -12,10 +13,13 @@
 </template>
 
 <script>
+import Searchbar from './components/Searchbar'
 
 export default {
   name: 'app',
   components: {
+
+    Searchbar
     
   },
   data () {
